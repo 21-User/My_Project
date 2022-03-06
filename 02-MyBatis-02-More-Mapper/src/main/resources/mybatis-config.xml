@@ -22,7 +22,7 @@
 
     <!--映射文件-->
     <mappers>
-        <mapper resource="StudentMapper.xml"/>
-        <mapper resource="StudentMapper2.xml"/>
+        <mapper resource="com/fc/mapper/StudentMapper.xml"/>
+        <mapper resource="com/fc/mapper/UserMapper.xml"/>
     </mappers>
 </configuration>
