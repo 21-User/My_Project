@@ -14,32 +14,53 @@ import java.util.List;
 
 public class MyBatisTest {
     @Test
-    public void testLessThan() {
+    public void testGreaterThan() {
         try {
-            //读取配置文件
             InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
 
-            //创建会话工厂
             SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(inputStream);
 
-            //获取连接
-            SqlSession sqlSession = factory.openSession();
+            SqlSession session = factory.openSession();
 
-            //通过反射获取接口的实现类
-            StudentDao studentDao = sqlSession.getMapper(StudentDao.class);
+            StudentDao studentDao = session.getMapper(StudentDao.class);
 
-            //调用方法
+            List<Student> students = studentDao.findGreaterThanAge(25);
+
+            for (Student student : students) {
+                System.out.println(student);
+            }
+
+            session.commit();
+
+            session.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void testLessThan() {
+        // 读取配置文件
+        try {
+            InputStream inputStream = Resources.getResourceAsStream("mybatis-config.xml");
+
+            // 构建会话工厂
+            SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(inputStream);
+
+            // 获取会话连接
+            SqlSession session = factory.openSession();
+
+            StudentDao studentDao = session.getMapper(StudentDao.class);
+
             List<Student> students = studentDao.findByLessThanAge(25);
 
             for (Student student : students) {
                 System.out.println(student);
             }
 
-            //提交事务
-            sqlSession.commit();
+            session.commit();
 
-            //关闭资源
-            sqlSession.close();
+            session.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
