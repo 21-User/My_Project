@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--映射，namespace命名空间，必须和接口的完整包名.类名完全一致-->
+<mapper namespace="com.fc.dao.StudentDao">
+
+<!--    使用对象参数绑定添加学生信息-->
+    <insert id="insert">
+            insert into student(name, age, gender, birthday, info) values (#{name}, #{age}, #{gender}, #{birthday}, #{info})
+    </insert>
+
+<!--    使用注解参数绑定删除-->
+    <delete id="delete" parameterType="Integer">
+        delete from student where id = #{id}
+    </delete>
+
+<!--    使用对象参数绑定修改学生信息-->
+    <update id="update">
+        update student set info = #{info} where id = #{id}
+    </update>
+
+    <select id="findAll" resultType="com.fc.entity.Student">
+        select * from student
+    </select>
+    
+    <select id="findById" resultType="com.fc.entity.Student" parameterType="Integer">
+        select * from student where id = #{id}
+    </select>
+
+<!--    模糊查询-->
+    <select id="findByKeyWord" parameterType="String" resultType="com.fc.entity.Student">
+        select * from student where info like #{keyword}
+    </select>
+
+<!--    主键回填-->
+    <insert id="getIncrement" useGeneratedKeys="true" keyProperty="id">
+        insert into student(name, age, gender, birthday, info) values (#{name}, #{age}, #{gender}, #{birthday}, #{info})
+    </insert>
+
+</mapper>

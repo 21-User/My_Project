@@ -7,10 +7,10 @@
     <!--导入外部properties配置文件-->
     <properties resource="jdbc.properties"/>
 
-<!--    别名-->
-    <typeAliases>
-        <typeAlias type="com.fc.entity.Student" alias="student"/>
-    </typeAliases>
+    <settings>
+        <!--配置日志框架为log4j2-->
+        <setting name="logImpl" value="LOG4J2"/>
+    </settings>
 
     <!--运行环境-->
     <environments default="development">
