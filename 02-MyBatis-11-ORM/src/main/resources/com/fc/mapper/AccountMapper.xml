@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--映射，namespace命名空间，必须和接口的完整包名.类名完全一致-->
-<mapper namespace="com.fc.dao.AccountDao">
+<mapper namespace="com.fc.dao.EmployeeDao">
 
     <!--resultMap是自定义的映射规则
     id：唯一标识，可以让sql语句标签来调用
@@ -27,4 +27,5 @@
     <select id="findAllByCamelCase" resultType="com.fc.entity.TAccount">
         select * from t_account
     </select>
+
 </mapper>
