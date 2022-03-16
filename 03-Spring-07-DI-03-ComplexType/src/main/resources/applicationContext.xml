@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.fc.entity.Car" id="car">
+        <property name="color" value="紫色"/>
+    </bean>
+
+    <bean class="com.fc.entity.ComplexType" id="complexType">
+        <property name="list">
+            <list>
+                <value>111</value>
+                <value>222</value>
+                <value>333</value>
+                <value>444</value>
+                <value>555</value>
+                <value>666</value>
+            </list>
+        </property>
+
+        <property name="set">
+            <set>
+                <value>12</value>
+                <value>23</value>
+                <value>34</value>
+            </set>
+        </property>
+
+        <property name="objects">
+            <array>
+                <value>哈</value>
+                <value>哈哈</value>
+                <value>哈哈哈</value>
+                <value>哈哈哈哈</value>
+                <value>哈哈哈哈哈</value>
+                <value>哈哈哈哈哈哈</value>
+            </array>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry key="person" value="哈哈哈"/>
+                <entry key="car" value-ref="car"/>
+            </map>
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="com.fc.entity.User" id="user"/>
+
+    <bean class="com.fc.dao.impl.UserDaoImpl" id="userDao"/>
+
+    <bean id="userDao2" class="com.fc.dao.impl.UserDao2Impl"/>
+    <bean class="com.fc.service.impl.UserServiceImpl" id="userService">
+        <property name="userDao" ref="userDao2"/>
+    </bean>
+
+    <bean class="com.fc.controller.UserController" id="userController">
+        <property name="userService" ref="userService"/>
+    </bean>
+</beans>

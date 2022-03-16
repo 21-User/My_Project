@@ -11,7 +11,7 @@ public class BeanNameTest {
         //获取容器
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        Student student = (Student) context.getBean("studen  t");
+        Student student = (Student) context.getBean("student");
 
         System.out.println(student);
     }
