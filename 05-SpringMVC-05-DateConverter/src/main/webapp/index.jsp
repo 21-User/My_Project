@@ -2,11 +2,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JSP - Hello World</title>
+    <title>测试日期格式</title>
 </head>
 <body>
-<h1><%= "Hello World!" %></h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
+<form action="/user/getDate">
+    <table align="center">
+        <tr>
+            <td>生日</td>
+            <td><input type="date" name="date"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="提交">
+            </td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>
