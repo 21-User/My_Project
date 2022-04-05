@@ -1,8 +1,6 @@
 package com.fc.entity;
 
-import java.io.Serializable;
-
-public class TbMusic implements Serializable {
+public class TbMusic {
     private Integer musicId;
 
     private String musicName;

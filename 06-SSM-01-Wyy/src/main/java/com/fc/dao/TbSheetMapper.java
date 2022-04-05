@@ -1,16 +1,11 @@
 package com.fc.dao;
 
-import com.fc.entity.TbMusic;
 import com.fc.entity.TbSheet;
 import com.fc.entity.TbSheetExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface TbSheetMapper {
-    List<TbMusic> findSongsBySheet(@Param("sheetName")String sheetName);
-
     long countByExample(TbSheetExample example);
 
     int deleteByExample(TbSheetExample example);

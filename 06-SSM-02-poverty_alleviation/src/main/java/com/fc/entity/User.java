@@ -3,21 +3,6 @@ package com.fc.entity;
 import java.util.Date;
 
 public class User {
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", createTime=" + createTime +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", name='" + name + '\'' +
-                ", age='" + age + '\'' +
-                ", gender='" + gender + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", photo='" + photo + '\'' +
-                '}';
-    }
 
     private Long id;
 

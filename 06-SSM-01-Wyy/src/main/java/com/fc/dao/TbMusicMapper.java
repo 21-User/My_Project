@@ -4,9 +4,7 @@ import com.fc.entity.TbMusic;
 import com.fc.entity.TbMusicExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface TbMusicMapper {
     long countByExample(TbMusicExample example);
 
@@ -29,8 +27,4 @@ public interface TbMusicMapper {
     int updateByPrimaryKeySelective(TbMusic record);
 
     int updateByPrimaryKey(TbMusic record);
-
-    Integer findMaxId();
-
-    Integer findMinId();
 }
