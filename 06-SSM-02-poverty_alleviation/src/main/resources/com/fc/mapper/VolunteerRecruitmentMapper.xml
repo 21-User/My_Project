@@ -150,7 +150,7 @@
       #{picture,jdbcType=VARCHAR}, #{releaseDate,jdbcType=DATE}, #{lastClickTime,jdbcType=TIMESTAMP}, 
       #{clickNum,jdbcType=INTEGER}, #{workRequire,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.fc.entity.VolunteerRecruitment">
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.fc.entity.VolunteerRecruitment">
     insert into volunteer_recruitment
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -461,5 +461,11 @@
       last_click_time = #{lastClickTime,jdbcType=TIMESTAMP},
       click_num = #{clickNum,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="click">
+    update volunteer_recruitment
+    set click_num = click_num + 1,
+        last_click_time = #{lastClickTime}
+    where id = #{id}
   </update>
 </mapper>

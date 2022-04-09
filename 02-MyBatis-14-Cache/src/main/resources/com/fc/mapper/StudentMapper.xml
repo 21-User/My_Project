@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--映射，namespace命名空间，必须和接口的完整包名.类名完全一致-->
-<mapper namespace="com.fc.dao.StudentDao">
+<mapper namespace="com.fc.util.fc.dao.StudentDao">
 
     <!--开启二级缓存，当前namespace下的所有查询sql 语句都有缓存-->
     <!--readonly：是否只读-->
@@ -19,7 +19,7 @@
     <cache/>
 
     <!--useCache="false"：可以关闭当前sql语句的缓存-->
-    <select id="findById" resultType="com.fc.entity.Student" parameterType="Integer">
+    <select id="findById" resultType="com.fc.util.fc.entity.Student" parameterType="Integer">
         select * from student where id = #{id}
     </select>
 

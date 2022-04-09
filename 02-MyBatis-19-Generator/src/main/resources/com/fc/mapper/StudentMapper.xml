@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.fc.dao.StudentMapper">
-  <resultMap id="BaseResultMap" type="com.fc.entity.Student">
+<mapper namespace="com.fc.util.fc.dao.StudentMapper">
+  <resultMap id="BaseResultMap" type="com.fc.util.fc.entity.Student">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="age" jdbcType="TINYINT" property="age" />
     <result column="gender" jdbcType="CHAR" property="gender" />
     <result column="birthday" jdbcType="TIMESTAMP" property="birthday" />
   </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.fc.entity.Student">
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.fc.util.fc.entity.Student">
     <result column="info" jdbcType="LONGVARCHAR" property="info" />
   </resultMap>
   <sql id="Example_Where_Clause">
@@ -75,7 +75,7 @@
   <sql id="Blob_Column_List">
     info
   </sql>
-  <select id="selectByExampleWithBLOBs" parameterType="com.fc.entity.StudentExample" resultMap="ResultMapWithBLOBs">
+  <select id="selectByExampleWithBLOBs" parameterType="com.fc.util.fc.entity.StudentExample" resultMap="ResultMapWithBLOBs">
     select
     <if test="distinct">
       distinct
@@ -91,7 +91,7 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByExample" parameterType="com.fc.entity.StudentExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.fc.util.fc.entity.StudentExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -117,13 +117,13 @@
     delete from student
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.fc.entity.StudentExample">
+  <delete id="deleteByExample" parameterType="com.fc.util.fc.entity.StudentExample">
     delete from student
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.fc.entity.Student">
+  <insert id="insert" parameterType="com.fc.util.fc.entity.Student">
     insert into student (id, name, age, 
       gender, birthday, info
       )
@@ -131,7 +131,7 @@
       #{gender,jdbcType=CHAR}, #{birthday,jdbcType=TIMESTAMP}, #{info,jdbcType=LONGVARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.fc.entity.Student">
+  <insert id="insertSelective" parameterType="com.fc.util.fc.entity.Student">
     insert into student
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -174,7 +174,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.fc.entity.StudentExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.fc.util.fc.entity.StudentExample" resultType="java.lang.Long">
     select count(*) from student
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -229,7 +229,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.fc.entity.Student">
+  <update id="updateByPrimaryKeySelective" parameterType="com.fc.util.fc.entity.Student">
     update student
     <set>
       <if test="name != null">
@@ -250,7 +250,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.fc.entity.Student">
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.fc.util.fc.entity.Student">
     update student
     set name = #{name,jdbcType=VARCHAR},
       age = #{age,jdbcType=TINYINT},
@@ -259,7 +259,7 @@
       info = #{info,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.fc.entity.Student">
+  <update id="updateByPrimaryKey" parameterType="com.fc.util.fc.entity.Student">
     update student
     set name = #{name,jdbcType=VARCHAR},
       age = #{age,jdbcType=TINYINT},

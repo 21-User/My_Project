@@ -117,7 +117,7 @@
                 #{gender,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},
                 #{photo,jdbcType=VARCHAR})
     </insert>
-    <insert id="insertSelective" parameterType="com.fc.entity.User">
+    <insert id="insertSelective" keyProperty="id" useGeneratedKeys="true" parameterType="com.fc.entity.User">
         insert into user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="id != null">
@@ -290,7 +290,4 @@
             photo       = #{photo,jdbcType=VARCHAR}
         where id = #{id,jdbcType=BIGINT}
     </update>
-    <select id="selectAll" resultType="com.fc.entity.User">
-        select * from user
-    </select>
 </mapper>

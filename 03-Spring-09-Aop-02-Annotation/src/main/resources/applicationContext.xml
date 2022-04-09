@@ -6,10 +6,10 @@
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="userService" class="com.fc.service.impl.UserServiceImpl"/>
+    <bean id="userService" class="com.fc.util.fc.service.impl.UserServiceImpl"/>
 
     <!--通知-->
-    <bean id="advice" class="com.fc.advice.AnnotationAspect"/>
+    <bean id="advice" class="com.fc.util.fc.advice.AnnotationAspect"/>
 
     <!--aop自动代理完成织入-->
     <!--开启aop注解支持-->

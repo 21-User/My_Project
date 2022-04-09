@@ -4,18 +4,18 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--映射，namespace命名空间，必须和接口的完整包名.类名完全一致-->
-<mapper namespace="com.fc.dao.StudentDao">
+<mapper namespace="com.fc.util.fc.dao.StudentDao">
     <!--sql用于声明一个代码片段-->
     <sql id="field">
         id, name, age, gender, birthday
     </sql>
 
     <!--include用于导入可复用的代码片段-->
-    <select id="findAll" resultType="com.fc.entity.Student">
+    <select id="findAll" resultType="com.fc.util.fc.entity.Student">
         select <include refid="field"/> from student
     </select>
 
-    <select id="findByKeyword" resultType="com.fc.entity.Student">
+    <select id="findByKeyword" resultType="com.fc.util.fc.entity.Student">
         select <include refid="field"/>
         from student
         where 1 = 1
@@ -28,7 +28,7 @@
         </if>
     </select>
 
-    <select id="findByStudent" resultType="com.fc.entity.Student">
+    <select id="findByStudent" resultType="com.fc.util.fc.entity.Student">
         select <include refid="field"/> from student
         <where>
             <if test="id != null">
@@ -57,7 +57,7 @@
         </where>
     </select>
     
-    <select id="findBYStudentWithTrim" resultType="com.fc.entity.Student">
+    <select id="findBYStudentWithTrim" resultType="com.fc.util.fc.entity.Student">
         select <include refid="field"/> from student
         <trim prefix="where" prefixOverrides="and">
             <if test="id != null">

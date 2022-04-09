@@ -1,9 +1,12 @@
 package com.fc.service;
 
 import com.fc.entity.Poor;
-
-import java.util.Map;
+import com.fc.entity.PoorWithBLOBs;
+import com.fc.vo.ResultVo;
 
 public interface PoorService {
-    Map<String, Object> add(Poor poor);
+//    ResultVo getList(Integer pageNo, Integer pageSize, Long id);
+
+    ResultVo add(PoorWithBLOBs poor);
+
 }

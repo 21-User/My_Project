@@ -1,4 +1,4 @@
-package com.fc.dao.dto;
+package com.fc.dto;
 
 import com.github.pagehelper.PageInfo;
 

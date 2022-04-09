@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.fc.dao.TbMusicMapper">
-  <resultMap id="BaseResultMap" type="com.fc.entity.TbMusic">
+<mapper namespace="com.fc.util.fc.dao.TbMusicMapper">
+  <resultMap id="BaseResultMap" type="com.fc.util.fc.entity.TbMusic">
     <id column="music_id" jdbcType="INTEGER" property="musicId" />
     <result column="music_name" jdbcType="VARCHAR" property="musicName" />
     <result column="music_album_name" jdbcType="VARCHAR" property="musicAlbumName" />
@@ -72,7 +72,7 @@
     music_id, music_name, music_album_name, music_album_pic_url, music_mp3_url, music_artist_name, 
     sheet_id
   </sql>
-  <select id="selectByExample" parameterType="com.fc.entity.TbMusicExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.fc.util.fc.entity.TbMusicExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -96,13 +96,13 @@
     delete from tb_music
     where music_id = #{musicId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.fc.entity.TbMusicExample">
+  <delete id="deleteByExample" parameterType="com.fc.util.fc.entity.TbMusicExample">
     delete from tb_music
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.fc.entity.TbMusic">
+  <insert id="insert" parameterType="com.fc.util.fc.entity.TbMusic">
     insert into tb_music (music_id, music_name, music_album_name, 
       music_album_pic_url, music_mp3_url, music_artist_name, 
       sheet_id)
@@ -110,7 +110,7 @@
       #{musicAlbumPicUrl,jdbcType=VARCHAR}, #{musicMp3Url,jdbcType=VARCHAR}, #{musicArtistName,jdbcType=VARCHAR}, 
       #{sheetId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.fc.entity.TbMusic">
+  <insert id="insertSelective" parameterType="com.fc.util.fc.entity.TbMusic">
     insert into tb_music
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="musicId != null">
@@ -159,7 +159,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.fc.entity.TbMusicExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.fc.util.fc.entity.TbMusicExample" resultType="java.lang.Long">
     select count(*) from tb_music
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -207,7 +207,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.fc.entity.TbMusic">
+  <update id="updateByPrimaryKeySelective" parameterType="com.fc.util.fc.entity.TbMusic">
     update tb_music
     <set>
       <if test="musicName != null">
@@ -231,7 +231,7 @@
     </set>
     where music_id = #{musicId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.fc.entity.TbMusic">
+  <update id="updateByPrimaryKey" parameterType="com.fc.util.fc.entity.TbMusic">
     update tb_music
     set music_name = #{musicName,jdbcType=VARCHAR},
       music_album_name = #{musicAlbumName,jdbcType=VARCHAR},
@@ -251,7 +251,7 @@
     select min(music_id) from tb_music
 #     select music_id from tb_music limit 0, 1
   </select>
-  <resultMap id="BaseResultMap" type="com.fc.entity.TbMusic">
+  <resultMap id="BaseResultMap" type="com.fc.util.fc.entity.TbMusic">
     <id column="music_id" jdbcType="INTEGER" property="musicId" />
     <result column="music_name" jdbcType="VARCHAR" property="musicName" />
     <result column="music_album_name" jdbcType="VARCHAR" property="musicAlbumName" />
@@ -322,7 +322,7 @@
     music_id, music_name, music_album_name, music_album_pic_url, music_mp3_url, music_artist_name, 
     sheet_id
   </sql>
-  <select id="selectByExample" parameterType="com.fc.entity.TbMusicExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.fc.util.fc.entity.TbMusicExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -346,13 +346,13 @@
     delete from tb_music
     where music_id = #{musicId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.fc.entity.TbMusicExample">
+  <delete id="deleteByExample" parameterType="com.fc.util.fc.entity.TbMusicExample">
     delete from tb_music
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.fc.entity.TbMusic">
+  <insert id="insert" parameterType="com.fc.util.fc.entity.TbMusic">
     insert into tb_music (music_id, music_name, music_album_name, 
       music_album_pic_url, music_mp3_url, music_artist_name, 
       sheet_id)
@@ -360,7 +360,7 @@
       #{musicAlbumPicUrl,jdbcType=VARCHAR}, #{musicMp3Url,jdbcType=VARCHAR}, #{musicArtistName,jdbcType=VARCHAR}, 
       #{sheetId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.fc.entity.TbMusic">
+  <insert id="insertSelective" parameterType="com.fc.util.fc.entity.TbMusic">
     insert into tb_music
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="musicId != null">
@@ -409,7 +409,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.fc.entity.TbMusicExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.fc.util.fc.entity.TbMusicExample" resultType="java.lang.Long">
     select count(*) from tb_music
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -457,7 +457,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.fc.entity.TbMusic">
+  <update id="updateByPrimaryKeySelective" parameterType="com.fc.util.fc.entity.TbMusic">
     update tb_music
     <set>
       <if test="musicName != null">
@@ -481,7 +481,7 @@
     </set>
     where music_id = #{musicId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.fc.entity.TbMusic">
+  <update id="updateByPrimaryKey" parameterType="com.fc.util.fc.entity.TbMusic">
     update tb_music
     set music_name = #{musicName,jdbcType=VARCHAR},
       music_album_name = #{musicAlbumName,jdbcType=VARCHAR},

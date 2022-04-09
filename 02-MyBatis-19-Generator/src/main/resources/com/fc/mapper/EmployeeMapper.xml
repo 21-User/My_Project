@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.fc.dao.EmployeeMapper">
-  <resultMap id="BaseResultMap" type="com.fc.entity.Employee">
+<mapper namespace="com.fc.util.fc.dao.EmployeeMapper">
+  <resultMap id="BaseResultMap" type="com.fc.util.fc.entity.Employee">
     <id column="emp_id" jdbcType="INTEGER" property="empId" />
     <result column="emp_name" jdbcType="VARCHAR" property="empName" />
     <result column="dept_id" jdbcType="INTEGER" property="deptId" />
@@ -67,7 +67,7 @@
   <sql id="Base_Column_List">
     emp_id, emp_name, dept_id
   </sql>
-  <select id="selectByExample" parameterType="com.fc.entity.EmployeeExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.fc.util.fc.entity.EmployeeExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -91,19 +91,19 @@
     delete from employee
     where emp_id = #{empId,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.fc.entity.EmployeeExample">
+  <delete id="deleteByExample" parameterType="com.fc.util.fc.entity.EmployeeExample">
     delete from employee
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.fc.entity.Employee">
+  <insert id="insert" parameterType="com.fc.util.fc.entity.Employee">
     insert into employee (emp_id, emp_name, dept_id
       )
     values (#{empId,jdbcType=INTEGER}, #{empName,jdbcType=VARCHAR}, #{deptId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.fc.entity.Employee">
+  <insert id="insertSelective" parameterType="com.fc.util.fc.entity.Employee">
     insert into employee
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="empId != null">
@@ -128,7 +128,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.fc.entity.EmployeeExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.fc.util.fc.entity.EmployeeExample" resultType="java.lang.Long">
     select count(*) from employee
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -160,7 +160,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.fc.entity.Employee">
+  <update id="updateByPrimaryKeySelective" parameterType="com.fc.util.fc.entity.Employee">
     update employee
     <set>
       <if test="empName != null">
@@ -172,7 +172,7 @@
     </set>
     where emp_id = #{empId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.fc.entity.Employee">
+  <update id="updateByPrimaryKey" parameterType="com.fc.util.fc.entity.Employee">
     update employee
     set emp_name = #{empName,jdbcType=VARCHAR},
       dept_id = #{deptId,jdbcType=INTEGER}

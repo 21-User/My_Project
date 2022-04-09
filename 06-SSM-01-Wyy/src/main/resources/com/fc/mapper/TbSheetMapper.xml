@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.fc.dao.TbSheetMapper">
-  <resultMap id="BaseResultMap" type="com.fc.entity.TbSheet">
+<mapper namespace="com.fc.util.fc.dao.TbSheetMapper">
+  <resultMap id="BaseResultMap" type="com.fc.util.fc.entity.TbSheet">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="sheet_name" jdbcType="VARCHAR" property="sheetName" />
   </resultMap>
@@ -66,7 +66,7 @@
   <sql id="Base_Column_List">
     id, sheet_name
   </sql>
-  <select id="selectByExample" parameterType="com.fc.entity.TbSheetExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.fc.util.fc.entity.TbSheetExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -90,17 +90,17 @@
     delete from tb_sheet
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.fc.entity.TbSheetExample">
+  <delete id="deleteByExample" parameterType="com.fc.util.fc.entity.TbSheetExample">
     delete from tb_sheet
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.fc.entity.TbSheet">
+  <insert id="insert" parameterType="com.fc.util.fc.entity.TbSheet">
     insert into tb_sheet (id, sheet_name)
     values (#{id,jdbcType=INTEGER}, #{sheetName,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.fc.entity.TbSheet">
+  <insert id="insertSelective" parameterType="com.fc.util.fc.entity.TbSheet">
     insert into tb_sheet
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -119,7 +119,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.fc.entity.TbSheetExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.fc.util.fc.entity.TbSheetExample" resultType="java.lang.Long">
     select count(*) from tb_sheet
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -147,7 +147,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.fc.entity.TbSheet">
+  <update id="updateByPrimaryKeySelective" parameterType="com.fc.util.fc.entity.TbSheet">
     update tb_sheet
     <set>
       <if test="sheetName != null">
@@ -156,16 +156,16 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.fc.entity.TbSheet">
+  <update id="updateByPrimaryKey" parameterType="com.fc.util.fc.entity.TbSheet">
     update tb_sheet
     set sheet_name = #{sheetName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <resultMap id="BaseResultMap" type="com.fc.entity.TbSheet">
+  <resultMap id="BaseResultMap" type="com.fc.util.fc.entity.TbSheet">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="sheet_name" jdbcType="VARCHAR" property="sheetName" />
   </resultMap>
-  <select id="findSongsBySheet" resultType="com.fc.entity.TbMusic">
+  <select id="findSongsBySheet" resultType="com.fc.util.fc.entity.TbMusic">
     select tm.* from tb_sheet ts
     join tb_music tm on ts.id = tm.sheet_id
     where ts.sheet_name = #{sheetName}
@@ -231,7 +231,7 @@
   <sql id="Base_Column_List">
     id, sheet_name
   </sql>
-  <select id="selectByExample" parameterType="com.fc.entity.TbSheetExample" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.fc.util.fc.entity.TbSheetExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -255,17 +255,17 @@
     delete from tb_sheet
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.fc.entity.TbSheetExample">
+  <delete id="deleteByExample" parameterType="com.fc.util.fc.entity.TbSheetExample">
     delete from tb_sheet
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.fc.entity.TbSheet">
+  <insert id="insert" parameterType="com.fc.util.fc.entity.TbSheet">
     insert into tb_sheet (id, sheet_name)
     values (#{id,jdbcType=INTEGER}, #{sheetName,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.fc.entity.TbSheet">
+  <insert id="insertSelective" parameterType="com.fc.util.fc.entity.TbSheet">
     insert into tb_sheet
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -284,7 +284,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.fc.entity.TbSheetExample" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.fc.util.fc.entity.TbSheetExample" resultType="java.lang.Long">
     select count(*) from tb_sheet
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -312,7 +312,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.fc.entity.TbSheet">
+  <update id="updateByPrimaryKeySelective" parameterType="com.fc.util.fc.entity.TbSheet">
     update tb_sheet
     <set>
       <if test="sheetName != null">
@@ -321,7 +321,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.fc.entity.TbSheet">
+  <update id="updateByPrimaryKey" parameterType="com.fc.util.fc.entity.TbSheet">
     update tb_sheet
     set sheet_name = #{sheetName,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}

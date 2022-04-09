@@ -3,11 +3,11 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="com.fc.entity.Car" id="car">
+    <bean class="com.fc.util.fc.entity.Car" id="car">
         <property name="color" value="紫色"/>
     </bean>
 
-    <bean class="com.fc.entity.ComplexType" id="complexType">
+    <bean class="com.fc.util.fc.entity.ComplexType" id="complexType">
         <property name="list">
             <list>
                 <value>111</value>

@@ -6,7 +6,7 @@
 
     <servlet>
         <servlet-name>UserController</servlet-name>
-        <servlet-class>com.fc.controller.UserController</servlet-class>
+        <servlet-class>com.fc.util.fc.controller.UserController</servlet-class>
         <init-param>
             <param-name>username</param-name>
             <param-value>21</param-value>

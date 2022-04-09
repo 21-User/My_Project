@@ -12,7 +12,7 @@
         http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--扫描指定路径下的所有注解-->
-    <context:component-scan base-package="com.fc"/>
+    <context:component-scan base-package="com.fc.util.fc"/>
 
     <!--用于放行静态资源-->
     <mvc:default-servlet-handler/>

@@ -4,20 +4,20 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--映射，namespace命名空间，必须和接口的完整包名.类名完全一致-->
-<mapper namespace="com.fc.dao.StudentDao">
+<mapper namespace="com.fc.util.fc.dao.StudentDao">
 <!--    序号参数绑定尽量不用-->
 <!--    参数绑定arg从0开始依次后续【】-->
-    <select id="findByIdAndName" resultType="com.fc.entity.Student">
+    <select id="findByIdAndName" resultType="com.fc.util.fc.entity.Student">
         select * from student where id = #{arg0} and name = #{arg1}
     </select>
 
 <!--    参数绑定param从1开始依次后续-->
-    <select id="findByIdAndAge" resultType="com.fc.entity.Student">
+    <select id="findByIdAndAge" resultType="com.fc.util.fc.entity.Student">
         select * from student where id = #{param1} and age = #{param2}
     </select>
 
 <!--    使用@Param注解进行参数绑定【常用】-->
-    <select id="findByNameAndAge" resultType="com.fc.entity.Student">
+    <select id="findByNameAndAge" resultType="com.fc.util.fc.entity.Student">
         select * from student where name = #{name} and age = #{age}
     </select>
 

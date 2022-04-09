@@ -11,7 +11,7 @@
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--扫描指定包下的注解-->
-    <context:component-scan base-package="com.fc">
+    <context:component-scan base-package="com.fc.util.fc">
         <!--指定不扫描指定注解-->
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
@@ -37,7 +37,7 @@
 
     <!--扫描指定包下的dao层接口-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.fc.dao"/>
+        <property name="basePackage" value="com.fc.util.fc.dao"/>
     </bean>
 
     <!--事务平台管理器-->
@@ -63,7 +63,7 @@
 
     <aop:config>
         <!--配置切点-->
-        <aop:pointcut id="pointcut" expression="execution(* com.fc.service.impl.*ServiceImpl.*(..))"/>
+        <aop:pointcut id="pointcut" expression="execution(* com.fc.util.fc.service.impl.*ServiceImpl.*(..))"/>
         <!--配置切面-->
         <aop:advisor advice-ref="advice" pointcut-ref="pointcut"/>
     </aop:config>

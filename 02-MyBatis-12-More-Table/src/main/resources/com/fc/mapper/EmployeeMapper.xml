@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--映射，namespace命名空间，必须和接口的完整包名.类名完全一致-->
-<mapper namespace="com.fc.dao.EmployeeDao">
-    <resultMap id="findAllMap" type="com.fc.entity.Employee">
+<mapper namespace="com.fc.util.fc.dao.EmployeeDao">
+    <resultMap id="findAllMap" type="com.fc.util.fc.entity.Employee">
         <id column="emp_id" property="id"/>
         <result column="emp_name" property="name"/>
 
@@ -13,7 +13,7 @@
         property：必须的，成员变量名
         javaType:必须的，成员变量数据类型-->
         <!--指定对象的封装规则,包含字段名以及对应的实体类类型-->
-        <association property="department" javaType="com.fc.entity.Department">
+        <association property="department" javaType="com.fc.util.fc.entity.Department">
             <id column="dept_id" property="id"/>
             <result column="dept_name" property="name"/>
         </association>

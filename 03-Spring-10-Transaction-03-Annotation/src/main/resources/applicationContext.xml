@@ -21,7 +21,7 @@
         <property name="password" value="${jdbc.password}"/>
     </bean>
 
-    <bean id="accountDao" class="com.fc.dao.impl.AccountDaoImpl">
+    <bean id="accountDao" class="com.fc.util.fc.dao.impl.AccountDaoImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
@@ -33,11 +33,11 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="annotationService" class="com.fc.service.impl.AnnotationServiceImpl">
+    <bean id="annotationService" class="com.fc.util.fc.service.impl.AnnotationServiceImpl">
         <property name="accountDao" ref="accountDao"/>
     </bean>
 
-    <bean id="accountService" class="com.fc.service.impl.AccountServiceImpl">
+    <bean id="accountService" class="com.fc.util.fc.service.impl.AccountServiceImpl">
         <property name="accountDao" ref="accountDao"/>
     </bean>
 </beans>

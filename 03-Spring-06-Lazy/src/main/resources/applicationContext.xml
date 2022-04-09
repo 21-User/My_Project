@@ -3,5 +3,5 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean scope="singleton" lazy-init="true" init-method="init" destroy-method="destroy" id="student" class="com.fc.entity.Student"/>
+    <bean scope="singleton" lazy-init="true" init-method="init" destroy-method="destroy" id="student" class="com.fc.util.fc.entity.Student"/>
 </beans>

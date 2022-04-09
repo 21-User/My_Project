@@ -6,12 +6,12 @@
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
 
-    <bean id="userService" class="com.fc.service.impl.UserServiceImpl"/>
-    <bean id="advice" class="com.fc.advice.XMLAdvice"/>
+    <bean id="userService" class="com.fc.util.fc.service.impl.UserServiceImpl"/>
+    <bean id="advice" class="com.fc.util.fc.advice.XMLAdvice"/>
     
     <aop:config>
         <aop:pointcut id="pointcut" expression="
-        execution(* com.fc.service.impl.UserServiceImpl.*(..))"/>
+        execution(* com.fc.util.fc.service.impl.UserServiceImpl.*(..))"/>
         <aop:aspect ref="advice">
             <aop:before method="before" pointcut-ref="pointcut"/>
             <aop:after-returning method="afterReturning" pointcut-ref="pointcut"/>

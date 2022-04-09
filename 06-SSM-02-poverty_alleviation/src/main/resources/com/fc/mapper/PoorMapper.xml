@@ -135,20 +135,20 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.fc.entity.PoorWithBLOBs">
-    insert into poor (id, create_time, sn, 
-      member, number, address, 
-      cover, income, username, 
-      name, audit, last_click_time, 
-      click_num, condition, introduce, 
+    insert into poor (id, create_time, sn,
+      member, number, address,
+      cover, income, username,
+      name, audit, last_click_time,
+      click_num, condition, introduce,
       reply)
-    values (#{id,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{sn,jdbcType=VARCHAR}, 
-      #{member,jdbcType=VARCHAR}, #{number,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, 
-      #{cover,jdbcType=VARCHAR}, #{income,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, 
-      #{name,jdbcType=VARCHAR}, #{audit,jdbcType=VARCHAR}, #{lastClickTime,jdbcType=TIMESTAMP}, 
-      #{clickNum,jdbcType=INTEGER}, #{condition,jdbcType=LONGVARCHAR}, #{introduce,jdbcType=LONGVARCHAR}, 
+    values (#{id,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{sn,jdbcType=VARCHAR},
+      #{member,jdbcType=VARCHAR}, #{number,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR},
+      #{cover,jdbcType=VARCHAR}, #{income,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR},
+      #{name,jdbcType=VARCHAR}, #{audit,jdbcType=VARCHAR}, #{lastClickTime,jdbcType=TIMESTAMP},
+      #{clickNum,jdbcType=INTEGER}, #{condition,jdbcType=LONGVARCHAR}, #{introduce,jdbcType=LONGVARCHAR},
       #{reply,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.fc.entity.PoorWithBLOBs">
+  <insert id="insertSelective" keyProperty="id" useGeneratedKeys="true" parameterType="com.fc.entity.PoorWithBLOBs">
     insert into poor
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

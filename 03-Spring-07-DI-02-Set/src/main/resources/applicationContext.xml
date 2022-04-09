@@ -3,12 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="student" class="com.fc.entity.Student">
+    <bean id="student" class="com.fc.util.fc.entity.Student">
         <property name="name" value="羊蛋哥"/>
         <property name="age" value="45"/>
     </bean>
 
-    <bean class="com.fc.entity.Teacher" id="teacher">
+    <bean class="com.fc.util.fc.entity.Teacher" id="teacher">
         <property name="age" value="32"/>
         <property name="name" value="苌工"/>
         <property name="student" ref="student"/>

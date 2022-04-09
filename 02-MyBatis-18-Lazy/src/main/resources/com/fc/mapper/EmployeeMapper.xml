@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--映射，namespace命名空间，必须和接口的完整包名.类名完全一致-->
-<mapper namespace="com.fc.dao.EmployeeDao">
-    <resultMap id="findByIdMap" type="com.fc.entity.Employee">
+<mapper namespace="com.fc.util.fc.dao.EmployeeDao">
+    <resultMap id="findByIdMap" type="com.fc.util.fc.entity.Employee">
         <id column="emp_id" property="id"/>
         <result column="emp_name" property="name"/>
     </resultMap>
