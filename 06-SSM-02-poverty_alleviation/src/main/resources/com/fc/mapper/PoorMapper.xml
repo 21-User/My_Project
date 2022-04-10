@@ -84,7 +84,7 @@
     last_click_time, click_num
   </sql>
   <sql id="Blob_Column_List">
-    condition, introduce, reply
+    `condition`, `introduce`, `reply`
   </sql>
   <select id="selectByExampleWithBLOBs" parameterType="com.fc.entity.PoorExample" resultMap="ResultMapWithBLOBs">
     select
@@ -134,13 +134,13 @@
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.fc.entity.PoorWithBLOBs">
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.fc.entity.PoorWithBLOBs">
     insert into poor (id, create_time, sn,
       member, number, address,
       cover, income, username,
       name, audit, last_click_time,
-      click_num, condition, introduce,
-      reply)
+      click_num, `condition`, `introduce`,
+      `reply`)
     values (#{id,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{sn,jdbcType=VARCHAR},
       #{member,jdbcType=VARCHAR}, #{number,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR},
       #{cover,jdbcType=VARCHAR}, #{income,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR},
@@ -191,13 +191,13 @@
         click_num,
       </if>
       <if test="condition != null">
-        condition,
+        `condition`,
       </if>
       <if test="introduce != null">
-        introduce,
+        `introduce`,
       </if>
       <if test="reply != null">
-        reply,
+        `reply`,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -240,7 +240,7 @@
       <if test="clickNum != null">
         #{clickNum,jdbcType=INTEGER},
       </if>
-      <if test="condition != null">
+      <if test="`condition != null">
         #{condition,jdbcType=LONGVARCHAR},
       </if>
       <if test="introduce != null">
@@ -300,13 +300,13 @@
         click_num = #{record.clickNum,jdbcType=INTEGER},
       </if>
       <if test="record.condition != null">
-        condition = #{record.condition,jdbcType=LONGVARCHAR},
+        `condition` = #{record.condition,jdbcType=LONGVARCHAR},
       </if>
       <if test="record.introduce != null">
-        introduce = #{record.introduce,jdbcType=LONGVARCHAR},
+        `introduce` = #{record.introduce,jdbcType=LONGVARCHAR},
       </if>
       <if test="record.reply != null">
-        reply = #{record.reply,jdbcType=LONGVARCHAR},
+        `reply` = #{record.reply,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -328,9 +328,9 @@
       audit = #{record.audit,jdbcType=VARCHAR},
       last_click_time = #{record.lastClickTime,jdbcType=TIMESTAMP},
       click_num = #{record.clickNum,jdbcType=INTEGER},
-      condition = #{record.condition,jdbcType=LONGVARCHAR},
-      introduce = #{record.introduce,jdbcType=LONGVARCHAR},
-      reply = #{record.reply,jdbcType=LONGVARCHAR}
+      `condition` = #{record.condition,jdbcType=LONGVARCHAR},
+      `introduce` = #{record.introduce,jdbcType=LONGVARCHAR},
+      `reply` = #{record.reply,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -394,13 +394,13 @@
         click_num = #{clickNum,jdbcType=INTEGER},
       </if>
       <if test="condition != null">
-        condition = #{condition,jdbcType=LONGVARCHAR},
+        `condition` = #{condition,jdbcType=LONGVARCHAR},
       </if>
       <if test="introduce != null">
-        introduce = #{introduce,jdbcType=LONGVARCHAR},
+        `introduce` = #{introduce,jdbcType=LONGVARCHAR},
       </if>
       <if test="reply != null">
-        reply = #{reply,jdbcType=LONGVARCHAR},
+        `reply` = #{reply,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -419,9 +419,9 @@
       audit = #{audit,jdbcType=VARCHAR},
       last_click_time = #{lastClickTime,jdbcType=TIMESTAMP},
       click_num = #{clickNum,jdbcType=INTEGER},
-      condition = #{condition,jdbcType=LONGVARCHAR},
-      introduce = #{introduce,jdbcType=LONGVARCHAR},
-      reply = #{reply,jdbcType=LONGVARCHAR}
+      `condition` = #{condition,jdbcType=LONGVARCHAR},
+      `introduce` = #{introduce,jdbcType=LONGVARCHAR},
+      `reply` = #{reply,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.fc.entity.Poor">
@@ -439,5 +439,10 @@
       last_click_time = #{lastClickTime,jdbcType=TIMESTAMP},
       click_num = #{clickNum,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="click">
+    update poor
+    set click_num =  click_num + 1, last_click_time = #{lastClickTime}
+    where id = #{id}
   </update>
 </mapper>

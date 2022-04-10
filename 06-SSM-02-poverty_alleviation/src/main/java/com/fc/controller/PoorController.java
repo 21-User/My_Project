@@ -18,11 +18,25 @@ public class PoorController {
         return poorService.add(poor);
     }
 
-//    @GetMapping("getList")
-//    public ResultVo getList(@RequestParam(value = "pageNo")Integer pageNo,
-//                            @RequestParam(value = "pageSize")Integer pageSize,
-//                            Long id) {
-//        return poorService.getList(pageNo, pageSize, id);
-//    }
+    @GetMapping("delete")
+    public ResultVo delete(@RequestParam Long id) {
+        return poorService.delete(id);
+    }
 
+    @PostMapping("update")
+    public ResultVo update(@RequestBody PoorWithBLOBs poor) {
+        return poorService.update(poor);
+    }
+
+    @GetMapping("getList")
+    public ResultVo getList(@RequestParam(value = "pageNo")Integer pageNo,
+                            @RequestParam(value = "pageSize")Integer pageSize,
+                            Long id) {
+        return poorService.getList(pageNo, pageSize, id);
+    }
+
+    @PostMapping("click")
+    public ResultVo click(@RequestBody PoorWithBLOBs poor) {
+        return poorService.click(poor.getId(), poor.getLastClickTime());
+    }
 }

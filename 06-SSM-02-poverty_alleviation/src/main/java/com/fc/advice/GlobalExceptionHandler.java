@@ -29,9 +29,9 @@ public class GlobalExceptionHandler {
         return new ResultVo(4600, "缺少了重要的请求参数，请重新检查后再次发送", false, e.getMessage());
     }
 
-    @ExceptionHandler(value = RuntimeException.class)
-    @ResponseBody
-    public ResultVo runtimeException(RuntimeException e) {
-        return new ResultVo(5000, "系统操作异常，请稍后重试或者联系管理员", false, e.getMessage());
-    }
+//    @ExceptionHandler(value = RuntimeException.class)
+//    @ResponseBody
+//    public ResultVo runtimeException(RuntimeException e) {
+//        return new ResultVo(5000, "系统操作异常，请稍后重试或者联系管理员", false, e.getMessage());
+//    }
 }
