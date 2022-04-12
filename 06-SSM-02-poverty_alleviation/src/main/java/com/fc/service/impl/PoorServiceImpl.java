@@ -112,7 +112,7 @@ public class PoorServiceImpl implements PoorService {
 
                 resultVo = new ResultVo(4200, "没有贫困户信息", false, dataVo);
             } else {
-                PageInfo<Poor> pageInfo = new PageInfo<>();
+                PageInfo<PoorWithBLOBs> pageInfo = new PageInfo<>(poors);
 
                 dataVo = new DataVo<>(pageInfo.getTotal(), poors, pageNo, pageSize);
 

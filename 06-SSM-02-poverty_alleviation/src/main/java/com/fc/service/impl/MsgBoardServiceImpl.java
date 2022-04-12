@@ -108,7 +108,7 @@ public class MsgBoardServiceImpl implements MsgBoardService {
 
                 resultVo = new ResultVo(4200, "没有留言信息", false, dataVo);
             } else {
-                PageInfo<MessageBoardWithBLOBs> pageInfo = new PageInfo<>();
+                PageInfo<MessageBoardWithBLOBs> pageInfo = new PageInfo<>(msgBoards);
 
                 dataVo = new DataVo<>(pageInfo.getTotal(), msgBoards, pageNo, pageSize);
 

@@ -7,11 +7,25 @@ import com.fc.vo.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @RestController
 @RequestMapping("msgboard")
+@CrossOrigin
 public class MsgBoardController {
     @Autowired
     private MsgBoardService msgBoardService;
+
+    @RequestMapping("get")
+    public Map<String, Object> get() {
+        Map<String, Object> map = new HashMap<>();
+
+        map.put("code",200);
+        map.put("message", "跨越请求成功");
+
+        return map;
+    }
 
     @PostMapping("add")
     public ResultVo add(@RequestBody MessageBoardWithBLOBs msgBoard) {

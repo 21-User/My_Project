@@ -76,7 +76,7 @@
     id, create_time, title, type, release_time, cover, last_click_time, click_num
   </sql>
   <sql id="Blob_Column_List">
-    content
+    `content`
   </sql>
   <select id="selectByExampleWithBLOBs" parameterType="com.fc.entity.AlleviationExample" resultMap="ResultMapWithBLOBs">
     select
@@ -129,7 +129,7 @@
   <insert id="insert" parameterType="com.fc.entity.Alleviation">
     insert into alleviation (id, create_time, title, 
       type, release_time, cover, 
-      last_click_time, click_num, content
+      last_click_time, click_num, `content`
       )
     values (#{id,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, #{title,jdbcType=VARCHAR}, 
       #{type,jdbcType=VARCHAR}, #{releaseTime,jdbcType=INTEGER}, #{cover,jdbcType=VARCHAR}, 
@@ -164,7 +164,7 @@
         click_num,
       </if>
       <if test="content != null">
-        content,
+        `content`,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -231,7 +231,7 @@
         click_num = #{record.clickNum,jdbcType=INTEGER},
       </if>
       <if test="record.content != null">
-        content = #{record.content,jdbcType=LONGVARCHAR},
+        `content` = #{record.content,jdbcType=LONGVARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -248,7 +248,7 @@
       cover = #{record.cover,jdbcType=VARCHAR},
       last_click_time = #{record.lastClickTime,jdbcType=TIMESTAMP},
       click_num = #{record.clickNum,jdbcType=INTEGER},
-      content = #{record.content,jdbcType=LONGVARCHAR}
+      `content` = #{record.content,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -292,7 +292,7 @@
         click_num = #{clickNum,jdbcType=INTEGER},
       </if>
       <if test="content != null">
-        content = #{content,jdbcType=LONGVARCHAR},
+        `content` = #{content,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
@@ -306,7 +306,7 @@
       cover = #{cover,jdbcType=VARCHAR},
       last_click_time = #{lastClickTime,jdbcType=TIMESTAMP},
       click_num = #{clickNum,jdbcType=INTEGER},
-      content = #{content,jdbcType=LONGVARCHAR}
+      `content` = #{content,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=BIGINT}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.fc.entity.Alleviation">

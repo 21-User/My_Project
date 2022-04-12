@@ -113,7 +113,7 @@ public class AlleviationServiceImpl implements AlleviationService {
             PageHelper.startPage(pageNo, pageSize);
 
             //查全部的数据信息将他放到数组中
-            alleviations = alleviationMapper.selectByExample(null);
+            alleviations = alleviationMapper.selectByExampleWithBLOBs(null);
 
             //数据库为空的情况
             if (alleviations.size() == 0) {

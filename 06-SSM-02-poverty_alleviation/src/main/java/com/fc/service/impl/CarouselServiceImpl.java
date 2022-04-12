@@ -113,7 +113,7 @@ public class CarouselServiceImpl implements CarouselService {
 
                 resultVo = new ResultVo(4200, "没有查到pictures", false, dataVo);
             } else {
-                PageInfo<Carousel> pageInfo = new PageInfo<>();
+                PageInfo<Carousel> pageInfo = new PageInfo<>(carousels);
 
                 dataVo = new DataVo<>(pageInfo.getTotal(), carousels, pageNo, pageSize);
 

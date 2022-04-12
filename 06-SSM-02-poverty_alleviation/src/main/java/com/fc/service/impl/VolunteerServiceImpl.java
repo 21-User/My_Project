@@ -118,9 +118,9 @@ public class VolunteerServiceImpl implements VolunteerService {
 
                 resultVo = new ResultVo(4200, "没有志愿者招聘信息", false, dataVo);
             } else {
-                PageInfo<VolunteerRecruitment> pageInfo = new PageInfo<>();
+                PageInfo<VolunteerRecruitment> pageInfo = new PageInfo<>(volunteers);
 
-                dataVo = new DataVo<>(pageInfo.getTotal(), volunteers, pageNo, pageSize);
+                dataVo = new DataVo<>(pageInfo.getTotal(),volunteers, pageNo, pageSize);
 
                 resultVo = new ResultVo(2200, "志愿者招聘信息查询成功", true, dataVo);
             }

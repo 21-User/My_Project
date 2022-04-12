@@ -116,7 +116,7 @@ public class CollectionServiceImpl implements CollectionService {
                 resultVo = new ResultVo(4000, "没有收藏信息!!", false, dataVo);
             } else {
                 //获取分页信息
-                PageInfo<Collection> pageInfo = new PageInfo<>();
+                PageInfo<Collection> pageInfo = new PageInfo<>(collections);
 
                 dataVo = new DataVo<>(pageInfo.getTotal(), collections, pageNo, pageSize);
 
