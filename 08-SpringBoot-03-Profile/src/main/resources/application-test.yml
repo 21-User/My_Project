@@ -1,0 +1,8 @@
+server:
+  port: 9999
+  servlet:
+    context-path: /test
+
+student:
+  name: 缴费率
+  age: 56
