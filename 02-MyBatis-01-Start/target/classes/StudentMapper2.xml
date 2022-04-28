@@ -4,17 +4,17 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!--映射，namespace命名空间，必须和接口的完整包名.类名完全一致-->
-<mapper namespace="com.fc.dao.StudentDao">
+<mapper namespace="com.fc.util.fc.dao.StudentDao">
 
-    <select id="findById" resultType="com.fc.entity.Student">
+    <select id="findById" resultType="com.fc.util.fc.entity.Student">
         select * from student where id = 1;
     </select>
 
-    <select id="findAll" resultType="com.fc.entity.Student">
+    <select id="findAll" resultType="com.fc.util.fc.entity.Student">
         select * from student
     </select>
 
-    <select id="findStudentById" parameterType="Integer" resultType="com.fc.entity.Student">
+    <select id="findStudentById" parameterType="Integer" resultType="com.fc.util.fc.entity.Student">
         select * from student where id = ${id}
     </select>
 </mapper>
