@@ -27,4 +27,8 @@ public interface TbMusicMapper {
     int updateByPrimaryKeySelective(TbMusic record);
 
     int updateByPrimaryKey(TbMusic record);
+
+    Integer findMaxId();
+
+    Integer findMinId();
 }

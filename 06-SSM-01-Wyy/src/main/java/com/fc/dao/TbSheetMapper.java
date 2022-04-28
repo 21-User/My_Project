@@ -1,5 +1,6 @@
 package com.fc.dao;
 
+import com.fc.entity.TbMusic;
 import com.fc.entity.TbSheet;
 import com.fc.entity.TbSheetExample;
 import java.util.List;
@@ -27,4 +28,6 @@ public interface TbSheetMapper {
     int updateByPrimaryKeySelective(TbSheet record);
 
     int updateByPrimaryKey(TbSheet record);
+
+    List<TbMusic> findSongsBySheet(String sheetName);
 }
