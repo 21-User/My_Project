@@ -1,0 +1,7 @@
+spring:
+  mvc:
+    view:
+      #前缀
+      prefix: /
+      #后缀
+      suffix: .jsp
